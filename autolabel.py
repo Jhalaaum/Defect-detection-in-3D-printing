@@ -1,8 +1,7 @@
 import cv2
 import numpy as np
 
-# Load the grayscale image
-img = cv2.imread('test.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('6_cropped_3_2.jpg', cv2.IMREAD_GRAYSCALE)
 
 _, thresh = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY_INV)
 
@@ -16,7 +15,7 @@ for cnt in contours:
     perimeter = cv2.arcLength(cnt, True)
     circularity = 4 * np.pi * (area / (perimeter * perimeter + 1e-6))
     
-    if circularity > 0.2:
+    if circularity > 0.5:
         (x, y), radius = cv2.minEnclosingCircle(cnt)
         cv2.circle(output, (int(x), int(y)), int(radius), (0, 255, 0), 1)
         cv2.circle(output, (int(x), int(y)), 1, (0, 0, 255), 2)  # center
