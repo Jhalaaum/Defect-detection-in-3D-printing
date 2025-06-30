@@ -11,7 +11,7 @@ output = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
 minInsidePixelIntensity = 50
 minAreaOccupiedByDefect = 30
-minCircularityThreshold = 0.85
+minCircularityThreshold = 0.65
 minAspectRatioThreshold = 3
 
 for idx, cnt in enumerate(contours):
