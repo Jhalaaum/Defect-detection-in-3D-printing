@@ -9,6 +9,11 @@ contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_
 
 output = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
+minInsidePixelIntensity = 50
+minAreaOccupiedByDefect = 30
+minCircularityThreshold = 0.85
+minAspectRatioThreshold = 3
+
 for idx, cnt in enumerate(contours):
     area = cv2.contourArea(cnt)
     perimeter = cv2.arcLength(cnt, True)
@@ -17,12 +22,12 @@ for idx, cnt in enumerate(contours):
     mask = np.zeros(img.shape, dtype=np.uint8)
     cv2.drawContours(mask, [cnt], -1, 255, -1)
     inside_pixels = img[mask == 255]
-    has_low_intensity = np.any(inside_pixels <= 50)
+    has_low_intensity = np.any(inside_pixels <= minInsidePixelIntensity)
 
     if has_low_intensity:
-        if area > 30:
-            circularity = 4 * np.pi * (area / (perimeter * perimeter))
-            if circularity > 0.85 and hierarchy[0][idx][1] != -1:
+        if area > minAreaOccupiedByDefect:
+            circularity = (4 * np.pi * area) / (perimeter * perimeter)
+            if circularity > minCircularityThreshold:
                 (x, y), radius = cv2.minEnclosingCircle(cnt)
                 center = (int(x), int(y))
                 radius = int(radius)
@@ -47,8 +52,12 @@ for idx, cnt in enumerate(contours):
             if width == 0 or height == 0:
                 continue
 
-            aspect_ratio = width / height
-            if aspect_ratio > 3:
+            if width/height > height/width:
+                aspect_ratio = width/height
+            else:
+                aspect_ratio = height/width
+
+            if aspect_ratio > minAspectRatioThreshold:
                 # Dark Blue
                 cv2.drawContours(output, [cnt], 0, (255, 0, 0), 2)
                 continue
