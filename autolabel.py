@@ -63,6 +63,7 @@ for idx, cnt in enumerate(contours):
                 continue
             # Red
             cv2.drawContours(output, [cnt],0, (0, 0, 255),2)
+cv2.imwrite("result.png", output)
 
 cv2.imshow("Defect Detection", output)
 cv2.waitKey(0)
