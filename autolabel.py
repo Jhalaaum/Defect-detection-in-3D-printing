@@ -1,17 +1,17 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('test.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('15_cropped_1_1.png', cv2.IMREAD_GRAYSCALE)
 
-_, thresh = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
+_, thresh = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY_INV)
 
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
 
 output = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
-minInsidePixelIntensity = 50
-minAreaOccupiedByDefect = 30
-minCircularityThreshold = 0.65
+minInsidePixelIntensity = 200
+minAreaOccupiedByDefect = 20
+minCircularityThreshold = 0.60
 minAspectRatioThreshold = 3
 
 for idx, cnt in enumerate(contours):
@@ -63,8 +63,9 @@ for idx, cnt in enumerate(contours):
                 continue
             # Red
             cv2.drawContours(output, [cnt],0, (0, 0, 255),2)
+        
 cv2.imwrite("result.png", output)
-
+print("done")
 cv2.imshow("Defect Detection", output)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
