@@ -1,7 +1,7 @@
 import os
 import shutil
 
-mixed_folder = "train/"
+mixed_folder = "models/train/"
 
 images_folder = os.path.join(mixed_folder, "images")
 masks_folder = os.path.join(mixed_folder, "masks")
