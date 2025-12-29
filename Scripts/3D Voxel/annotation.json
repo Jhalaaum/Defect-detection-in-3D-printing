@@ -1,0 +1,173 @@
+{
+    "boxes": [
+        {
+            "id": "2",
+            "type": "polygon",
+            "label": "incomplete melting induced porosities",
+            "x": "264.5000",
+            "y": "375.0000",
+            "width": "17.0000",
+            "height": "6.0000",
+            "points": [
+                [
+                    256,
+                    372
+                ],
+                [
+                    261,
+                    378
+                ],
+                [
+                    273,
+                    374
+                ]
+            ]
+        },
+        {
+            "id": "1",
+            "type": "polygon",
+            "label": "incomplete melting induced porosities",
+            "x": "263.0000",
+            "y": "375.5000",
+            "width": "20.0000",
+            "height": "7.0000",
+            "points": [
+                [
+                    256,
+                    372
+                ],
+                [
+                    253,
+                    376
+                ],
+                [
+                    258,
+                    379
+                ],
+                [
+                    266,
+                    379
+                ],
+                [
+                    273,
+                    374
+                ]
+            ]
+        },
+        {
+            "id": "3",
+            "type": "polygon",
+            "label": "incomplete melting induced porosities",
+            "x": "291.5000",
+            "y": "378.5000",
+            "width": "21.0000",
+            "height": "15.0000",
+            "points": [
+                [
+                    285,
+                    371
+                ],
+                [
+                    281,
+                    373
+                ],
+                [
+                    284,
+                    386
+                ],
+                [
+                    302,
+                    380
+                ],
+                [
+                    298,
+                    372
+                ]
+            ]
+        },
+        {
+            "id": "4",
+            "type": "polygon",
+            "label": "incomplete melting induced porosities",
+            "x": "515.5000",
+            "y": "452.0000",
+            "width": "15.0000",
+            "height": "12.0000",
+            "points": [
+                [
+                    514,
+                    446
+                ],
+                [
+                    508,
+                    446
+                ],
+                [
+                    511,
+                    453
+                ],
+                [
+                    523,
+                    458
+                ]
+            ]
+        },
+        {
+            "id": "5",
+            "type": "polygon",
+            "label": "Entrapped gas porosity",
+            "x": "542.5000",
+            "y": "186.0000",
+            "width": "7.0000",
+            "height": "6.0000",
+            "points": [
+                [
+                    541,
+                    183
+                ],
+                [
+                    539,
+                    189
+                ],
+                [
+                    544,
+                    189
+                ],
+                [
+                    546,
+                    186
+                ]
+            ]
+        },
+        {
+            "id": "6",
+            "type": "polygon",
+            "label": "incomplete melting induced porosities",
+            "x": "724.0000",
+            "y": "521.5000",
+            "width": "12.0000",
+            "height": "7.0000",
+            "points": [
+                [
+                    722,
+                    518
+                ],
+                [
+                    718,
+                    518
+                ],
+                [
+                    721,
+                    525
+                ],
+                [
+                    730,
+                    522
+                ]
+            ]
+        }
+    ],
+    "height": 600,
+    "key": "31_cropped_2_3.png",
+    "width": 900
+}
