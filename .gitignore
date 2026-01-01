@@ -1,1 +1,6 @@
 models/model.pt
+porosity_mesh.stl
+voxel_volume.h5
+voxel_volume.npy
+stitched_masks
+stitched_images
