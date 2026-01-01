@@ -1,19 +1,14 @@
 import cv2
 import numpy as np
 
-# Load grayscale image
 img = cv2.imread('test.png', cv2.IMREAD_GRAYSCALE)
 
-# Thresholding (invert binary)
 _, thresh = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
 
-# Find contours with hierarchy
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
 
-# Prepare output image for visualization (optional)
 output = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
-# Initialize label mask (same size as img), dtype=uint8 for class IDs
 label_mask = np.zeros(img.shape, dtype=np.uint8)
 
 # Threshold parameters

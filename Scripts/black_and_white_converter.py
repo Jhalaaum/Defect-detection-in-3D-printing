@@ -15,4 +15,3 @@ for filename in os.listdir(input_folder):
         output_path = os.path.join(output_folder, filename)
         cv2.imwrite(output_path, img_gray)
 
-print("Grayscale conversion done.")

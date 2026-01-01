@@ -31,4 +31,3 @@ for z, imgs in images_by_z.items():
 
     output_path = os.path.join(output_folder, f"{z}.png")
     stitched.save(output_path)
-    print(f"Saved z-level {z} -> {output_path}")
