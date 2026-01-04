@@ -25,7 +25,7 @@ print("Number of pores detected:", num_pores)
 plt.hist(pore_volumes, bins=3000)
 plt.xlabel("Pore volume (voxels)")
 plt.yscale("log")
-plt.xlim(0, 1200)
+plt.xlim(0, 2000)
 plt.ylabel("Frequency")
 plt.title("Pore Size Distribution")
 
